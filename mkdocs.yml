@@ -1,4 +1,5 @@
-site_name: Interview Ready Study Plan
+site_name: Interview Ready
+site_url: https://rohitanand7890.github.io/interview-ready/
 theme:
   name: material
   features:

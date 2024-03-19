@@ -1,4 +1,6 @@
-# E-Commerce Site Application
+# Example documentation: E-Commerce Site Application
+
+[Repository URL](https://github.com/rohitanand7890/E-CommerceSite)
 
 This is a Java Spring Boot project designed for e-commerce operations. This application demonstrates transactional order processing, global exception handling, and RESTful API design, utilizing technologies such as Spring Boot, SQLite, and MyBatis.
 
@@ -10,7 +12,7 @@ This project provides a backend for e-commerce operations, emphasizing transacti
 
 The application employs Spring Boot's `@Transactional` annotation with isolation level `SERIALIZABLE` to ensure each order is processed consistently and isolated, safeguarding against concurrent transaction anomalies.
 
-```java title="Trasactional annotation is used"
+```java title="@Trasactional annotation for resource locking"
     @Transactional(isolation = Isolation.SERIALIZABLE, timeout = 6)
     public ResponseMessage createOrder(CreateOrder createOrder) throws InsufficientItemStockException, InsufficientUserBalanceException {
         // Transactional logic
@@ -131,7 +133,7 @@ Generate Test Coverage Report with:
 
 ## JaCoCo Test Coverage Report
 image
-![Report](./jacoco-test-coverage-report.png)
+![Report](../images/jacoco-test-coverage-report.png)
 
 ## ToDo's and Future Improvements
 
