@@ -133,7 +133,7 @@ Generate Test Coverage Report with:
 
 ## JaCoCo Test Coverage Report
 image
-![Report](../images/jacoco-test-coverage-report.png)
+![Report](images/jacoco-test-coverage-report.png)
 
 ## ToDo's and Future Improvements
 
