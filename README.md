@@ -2,6 +2,12 @@
 
 [Site URL](https://rohitanand7890.github.io/interview-ready/)
 
+## Runbook
+
+Use [make commands](./Makefile) to run application 
+
+- Install dependencies: `make install`
+- Start application: `make run`
 
 ## References:
 
@@ -24,3 +30,8 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
+
+
+
+uninstall:
+	pip3 uninstall -r requirements.txt

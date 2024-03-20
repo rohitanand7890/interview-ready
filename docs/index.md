@@ -1,17 +1,147 @@
-# Welcome to MkDocs
+# Java Interview Questions
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## Collection framework Hierarchy in Java 
 
-## Commands
+### package java.util; 
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+```mermaid
+classDiagram
+class Iterable {
+  <<interface>>
+}
 
-## Project layout
+class Collection {
+  <<interface>>
+}
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+class List {
+  <<interface>>
+}
+
+class Queue {
+  <<interface>>
+}
+
+class Set {
+  <<interface>>
+}
+
+class ArrayList {
+  <<class>>
+}
+
+class LinkedList {
+  <<class>>
+}
+
+class Vector {
+  <<class>>
+}
+
+class Stack {
+  <<class>>
+}
+
+class AbstractQueue {
+  <<abstract_class>>
+}
+
+class PriorityQueue {
+  <<class>>
+}
+
+class Deque {
+  <<interface>>
+}
+
+class ArrayDeque {
+  <<class>>
+}
+
+class AbstractSet {
+  <<abstract_class>>
+}
+
+class HashSet {
+  <<class>>
+}
+
+class LinkedHashSet {
+  <<class>>
+}
+
+class SortedSet {
+  <<interface>>
+}
+
+class TreeSet {
+  <<class>>
+}
+        
+class Map {
+  <<interface>>
+}
+
+class AbstractMap {
+    <<abstract_class>>
+}
+
+class Hashtable {
+  <<class>>
+}
+
+class HashMap {
+    <<class>>
+}
+
+class LinkedHashMap {
+<<class>>
+}
+        
+class SequenceMap {
+  <<interface>>
+}
+
+class SortedMap {
+  <<interface>>
+}
+
+class NavigableMap {
+  <<interface>>
+}
+
+class TreeMap {
+  <<class>>
+}
+
+Iterable <|.. Collection
+Collection <|.. List
+Collection <|.. Queue
+Collection <|.. Set
+List <|-- Vector
+Vector <|.. Stack
+List <|-- ArrayList
+List <|-- LinkedList
+Queue <|.. Deque
+Deque <|-- LinkedList
+Deque <|-- ArrayDeque
+Queue <|-- AbstractQueue
+AbstractQueue <|.. PriorityQueue
+Set <|-- HashSet
+Set <|-- AbstractSet
+Set <|.. SortedSet
+AbstractSet <|.. HashSet
+HashSet <|.. LinkedHashSet
+AbstractSet <|.. TreeSet
+Map <|-- Hashtable
+Map <|-- HashMap
+Map <|-- AbstractMap
+Map <|.. SequenceMap
+HashMap <|.. LinkedHashMap
+AbstractMap <|.. HashMap
+SequenceMap <|.. SortedMap
+SortedMap <|.. NavigableMap
+NavigableMap <|-- TreeMap
+AbstractMap <|.. TreeMap
+
+```
