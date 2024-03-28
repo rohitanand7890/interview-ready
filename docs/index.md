@@ -146,9 +146,14 @@ AbstractMap <|.. TreeMap
 
 ```
 
-### Question 1:
+### Simplified Structure
 
-What is the difference between HashMap and ConcurrentHashMap in Java ?
+![Collections](./images/Collections.png)
+
+![Map](./images/Map-UtilPackage.png)
+
+
+### Question 1: What is the difference between HashMap and ConcurrentHashMap in Java ?
 
 #### HashMap
 - **Not Synchronized**: `HashMap` is not thread-safe, which means that if multiple threads access it concurrently and at least one of the threads modifies the map structurally, it must be synchronized externally.
@@ -165,9 +170,7 @@ What is the difference between HashMap and ConcurrentHashMap in Java ?
 
 In summary, `HashMap` should be used in non-threaded or single-threaded environments, or when the map does not require concurrent access/modification. `ConcurrentHashMap` is the preferable choice in multi-threaded applications where the map is accessed by concurrent threads and high performance is required.
 
-### Question 2:
-
-What will be the difference with `ConcurrentHashmap` when we make the HashMap `synchronized` ?
+### Question 2: What will be the difference with `ConcurrentHashmap` when we make the HashMap `synchronized` ?
 
 **Answer :**
 Making a `HashMap` synchronized typically means wrapping it using `Collections.synchronizedMap()`. This provides a basic level of thread safety by ensuring that each individual operation on the `HashMap` is synchronized. However, there are still significant differences between a synchronized `HashMap` and a `ConcurrentHashMap`:
@@ -185,3 +188,59 @@ Making a `HashMap` synchronized typically means wrapping it using `Collections.s
 - **Enhanced Concurrent Access**: Multiple readers can access the map concurrently without locking, and writers can add or update without blocking readers. This allows higher levels of concurrency.
 
 In short, while you can make a `HashMap` thread-safe by synchronizing it, `ConcurrentHashMap` is designed for higher throughput in concurrent scenarios and can handle multiple readers and writers efficiently. Synchronized `HashMap` is a more conservative approach where every operation is thread-safe but potentially slower under high concurrency due to the coarse-grained lock mechanism.
+
+### Question 3: Difference Between Volatile, Atomic And Synchronized in Java
+### Question 4: Transient Keyword in Java
+### Question 5: strictfp Keyword in Java
+### Question 6: HasMap vs Hashtable
+### Question 7: Semaphores in Java
+
+### Question 8: final, finally{} vs finalize(): finalize is depricated since Java 9  
+
+#### final: Restrict the modification
+    variable: cannot modify its value
+    method: cannot be override 
+    class: cannot be extended
+
+#### finally{} : Block of code written generally after try catch block which will be executed always no matter what
+
+#### finalize(): part of object class, invoked by GC just before garbage collection for some clean up activity 
+    finalize is depricated since Java 9 
+
+### Question 9: Why `Map` is not under `Collections`?
+
+#### 
+- All Collection Classes have `Value` parameter and the methods are designed to provide implementation around `Value`. 
+- While `Map` has `Key-value` parameter
+
+### Question 9: `HashMap` internal implementation?
+
+#### Hash functions: eg: MD1, SH256, Custom hashcode implementation
+
+Node: 
+- hash
+- key
+- value
+- next Node<K, V>
+
+Default initial capacity : 
+- 1>>4 i.e. 16 
+
+Map Internally Stores data:
+- Hash Collision
+  - put(5, "abc") -> 61610 
+  - get(5) -> hash() -> 61610 % 16(capacity)  -> gives index -> iterate over list to find key `5` 
+    - i.e. compares `hash` and `value`
+- Contract b/w Hashcode and equals method
+  1. if obj1 == obj2 their hash should be also same
+  2. if 2 objects hash is same, doesn't mean objects are same.
+- Load Factor: `Default = 0.75` -> 16 * 0.75 = 12
+  - increases or doubles the size of hashmap when load factor is reached, HashMap does rehash
+- Treefy Threshold = 8 (it is also called `Bin count`)
+  - Converts the LinkedList O(n) into Tree, its a Balanced Binary Search tree(Red -Black tree),
+  - Searching would be in O(log(n))
+
+**TIme Complexity**
+- add: Amortized O(1) i.e average
+- remove: Amortized O(1)
+- get: amortized O(1)
