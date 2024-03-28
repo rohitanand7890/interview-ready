@@ -217,7 +217,7 @@ In short, while you can make a `HashMap` thread-safe by synchronizing it, `Concu
 
 #### Hash functions: eg: MD1, SH256, Custom hashcode implementation
 
-Node: 
+**Node:** 
 
 - hash
 
@@ -227,35 +227,34 @@ Node:
 
 - next Node<K, V>
 
-Default initial capacity : 
+**Default initial capacity :** 
 
 - 1>>4 i.e. 16 
 
-Map Internally Stores data:
+**Map Internally Stores data:**
 
 - Hash Collision
 
-  - put(5, "abc") -> 61610 
+  -     put(5, "abc") -> 61610 
 
-  - get(5) -> hash() -> 61610 % 16(capacity)  -> gives index -> iterate over list to find key `5` 
-    - i.e. compares `hash` and `value`
+  -     get(5) -> hash() -> 61610 % 16(capacity)  -> gives index -> iterate over list to find key `5` 
+          i.e. compares `hash` and `value`
 
-- Contract b/w Hashcode and equals method
+**Contract b/w Hashcode and equals method**
 
-  1. if obj1 == obj2 their hash should be also same
-  2. if 2 objects hash is same, doesn't mean objects are same.
+1. if obj1 == obj2 their hash should be also same
+2. if 2 objects hash is same, doesn't mean objects are same.
 
-- Load Factor: `Default = 0.75` -> 16 * 0.75 = 12
-  - increases or doubles the size of hashmap when load factor is reached, HashMap does rehash
+**Load Factor:** 
+* `Default = 0.75` -> 16 * 0.75 = 12
+* increases or doubles the size of hashmap when load factor is reached, HashMap does rehash
 
-- Treefy Threshold = 8 (it is also called `Bin count`)
-  - Converts the LinkedList O(n) into Tree, its a Balanced Binary Search tree(Red -Black tree),
-  - Searching would be in O(log(n))
+**Treefy Threshold = 8 (it is also called `Bin count`)**
+* Converts the LinkedList O(n) into Tree, its a Balanced Binary Search tree(Red -Black tree),
+* Searching would be in O(log(n))
 
 **TIme Complexity**
 
-- add: Amortized O(1) i.e average
-
-- remove: Amortized O(1)
-
-- get: amortized O(1)
+* `Add`: Amortized O(1) i.e average
+* `Remove`: Amortized O(1)
+* `Get`: amortized O(1)
