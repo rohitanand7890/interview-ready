@@ -219,13 +219,10 @@ In short, while you can make a `HashMap` thread-safe by synchronizing it, `Concu
 
 **Node:** 
 
-- hash
-
-- key
-
-- value
-
-- next Node<K, V>
+* hash
+* key
+* value
+* next Node<K, V>
 
 **Default initial capacity :** 
 
@@ -233,12 +230,11 @@ In short, while you can make a `HashMap` thread-safe by synchronizing it, `Concu
 
 **Map Internally Stores data:**
 
-- Hash Collision
+Hash Collision
 
-  -     put(5, "abc") -> 61610 
-
-  -     get(5) -> hash() -> 61610 % 16(capacity)  -> gives index -> iterate over list to find key `5` 
-          i.e. compares `hash` and `value`
+* put(5, "abc") -> 61610 
+* get(5) -> hash() -> 61610 % 16(capacity)  -> gives index -> iterate over list to find key `5`
+* i.e. compares `hash` and `value`
 
 **Contract b/w Hashcode and equals method**
 
@@ -246,10 +242,12 @@ In short, while you can make a `HashMap` thread-safe by synchronizing it, `Concu
 2. if 2 objects hash is same, doesn't mean objects are same.
 
 **Load Factor:** 
+
 * `Default = 0.75` -> 16 * 0.75 = 12
 * increases or doubles the size of hashmap when load factor is reached, HashMap does rehash
 
 **Treefy Threshold = 8 (it is also called `Bin count`)**
+
 * Converts the LinkedList O(n) into Tree, its a Balanced Binary Search tree(Red -Black tree),
 * Searching would be in O(log(n))
 
